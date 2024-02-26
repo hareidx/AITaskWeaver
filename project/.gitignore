@@ -3,3 +3,7 @@ cache
 sessions
 workspace
 config
+taskweaver_config
+*.json
+taskweaver_config.json
+project/taskweaver_config.json

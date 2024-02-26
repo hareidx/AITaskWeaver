@@ -1,6 +1,18 @@
 from os import listdir, path
 from typing import Any, Dict, Optional, Tuple
 
+# added by myself on 2023-12-27
+import sys
+# Path to the directory containing your module
+module_dir = 'c://users//staid//appdata//local//programs//python//python311//lib//site-packages//'
+# Add this directory to sys.path
+if module_dir not in sys.path:
+    sys.path.append(module_dir)
+# Now you can import your module as usual
+import injector
+
+
+
 from injector import Injector
 
 from taskweaver.config.config_mgt import AppConfigSource

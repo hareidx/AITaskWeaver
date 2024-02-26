@@ -1,0 +1,292 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\staid> d:
+PS D:\> cd .\code\GitHub\AITaskWeaver\
+PS D:\code\GitHub\AITaskWeaver> ls
+
+
+    Directory: D:\code\GitHub\AITaskWeaver
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        27/12/2023   8:32 PM                .asset
+d-----        27/12/2023   8:32 PM                .devcontainer
+d-----        27/12/2023   8:32 PM                .github
+d-----        27/12/2023   8:32 PM                .linters
+d-----        27/12/2023   8:32 PM                auto_eval
+d-----        27/12/2023   8:32 PM                playground
+d-----        27/12/2023   8:32 PM                project
+d-----        27/12/2023   8:37 PM                scripts
+d-----        27/12/2023   8:44 PM                taskweaver
+d-----        27/12/2023   8:32 PM                tests
+d-----        27/12/2023   8:32 PM                website
+-a----        27/12/2023   8:43 PM           4640 .gitignore
+-a----        27/12/2023   8:32 PM           1750 .pre-commit-config.yaml
+-a----        27/12/2023   8:32 PM           2430 .secrets.baseline
+-a----        27/12/2023   8:32 PM            453 CODE_OF_CONDUCT.md
+-a----        27/12/2023   8:32 PM            933 CONTRIBUTING.md
+-a----        27/12/2023   8:32 PM           1162 LICENSE
+-a----        27/12/2023   8:32 PM           7624 README.md
+-a----        27/12/2023   8:32 PM            387 requirements.txt
+-a----        27/12/2023   8:32 PM           2697 SECURITY.md
+-a----        27/12/2023   8:32 PM           2583 setup.py
+-a----        27/12/2023   8:32 PM           1244 SUPPORT.md
+-a----        27/12/2023   8:32 PM             57 version.json
+
+
+PS D:\code\GitHub\AITaskWeaver> python -m taskweaver -p project
+=========================================================
+ _____         _     _       __
+|_   _|_ _ ___| | _ | |     / /__  ____ __   _____  _____
+  | |/ _` / __| |/ /| | /| / / _ \/ __ `/ | / / _ \/ ___/
+  | | (_| \__ \   < | |/ |/ /  __/ /_/ /| |/ /  __/ /
+  |_|\__,_|___/_|\_\|__/|__/\___/\__,_/ |___/\___/_/
+=========================================================
+TaskWeaver: I am TaskWeaver, an AI assistant. To get started, could you please enter your request?
+Human: hi I want help prioritising my tasks
+>>> [INIT_PLAN]
+1. Ask the user to list their tasks
+2. Ask for criteria to prioritize tasks <interactively depends on 1>
+3. Prioritize tasks based on the criteria <sequentially depends on 2>
+4. Report the prioritized list to the user <interactively depends on 3>
+>>> [PLAN]
+1. Ask the user to list their tasks
+2. Ask for criteria to prioritize tasks
+3. Prioritize tasks based on the criteria
+4. Report the prioritized list to the user
+>>> [CURRENT_PLAN_STEP]
+1. Ask the user to list their tasks
+>>> [SEND_TO]
+User
+>>> [MESSAGE]
+Could you please list the tasks that you need help with prioritizing?
+>>> [PLANNER->USER]
+Could you please list the tasks that you need help with prioritizing?
+TaskWeaver: Could you please list the tasks that you need help with prioritizing?
+Human: here they are, separated by semi-colon: clean the bathroom; touch up paint in the bathroom; complete my taxes; feed th
+e fish
+>>> [INIT_PLAN]
+1. Ask the user to list their tasks
+2. Ask for criteria to prioritize tasks <interactively depends on 1>
+3. Prioritize tasks based on the criteria <sequentially depends on 2>
+4. Report the prioritized list to the user <interactively depends on 3>
+>>> [PLAN]
+1. Receive the list of tasks from the user
+2. Ask for criteria to prioritize tasks
+3. Prioritize tasks based on the criteria
+4. Report the prioritized list to the user
+>>> [CURRENT_PLAN_STEP]
+2. Ask for criteria to prioritize tasks
+>>> [SEND_TO]
+User
+>>> [MESSAGE]
+What criteria would you like to use to prioritize these tasks? For example, urgency, importance, deadline, or duration.
+>>> [PLANNER->USER]
+What criteria would you like to use to prioritize these tasks? For example, urgency, importance, deadline, or duration.
+TaskWeaver: What criteria would you like to use to prioritize these tasks? For example, urgency, importance, deadline, or duration.
+Human: can you create different lists for all of those ways of prioritizing them?
+>>> [INIT_PLAN]
+1. Ask the user to list their tasks
+2. Ask for criteria to prioritize tasks <interactively depends on 1>
+3. Create prioritized lists based on different criteria: urgency, importance, deadline, and duration <sequentially depends on2>
+4. Report the prioritized lists to the user <interactively depends on 3>
+>>> [PLAN]
+1. Receive the list of tasks from the user
+2. Create prioritized lists based on different criteria: urgency, importance, deadline, and duration
+3. Report the prioritized lists to the user
+>>> [CURRENT_PLAN_STEP]
+2. Create prioritized lists based on different criteria: urgency, importance, deadline, and duration
+>>> [SEND_TO]
+User
+>>> [MESSAGE]
+To create the prioritized lists, I need additional information for each task. Could you please specify the urgency (high, medium, low), importance (high, medium, low), deadline (if any), and duration (estimated time to complete) for each of your tasks?
+>>> [PLANNER->USER]
+To create the prioritized lists, I need additional information for each task. Could you please specify the urgency (high, medium, low), importance (high, medium, low), deadline (if any), and duration (estimated time to complete) for each of your tasks?
+TaskWeaver: To create the prioritized lists, I need additional information for each task. Could you please specify the urgency (high, medium, low), importance (high, medium, low), deadline (if any), and duration (estimated time to complete) for each of your tasks?
+Human: here is the urgency: clean the bathroom = low; touch up paint in the bathroom = low; complete my taxes = low; feed the
+ fish = medium. here is the duration: clean the bathroom = 30 minutes; touch up paint in the bathroom = 60 minutes; complete
+my taxes = 120 minutes; feed the fish = 10 minutes. here is the importance: clean the bathroom = low; touch up paint in the b
+athroom = low; complete my taxes = high; feed the fish = high. Here is the deadline: clean the bathroom = tomorrow; touch up
+paint in the bathroom = not applicable; complete my taxes = 2 weeks away; feed the fish = tomorrow.
+>>> [INIT_PLAN]
+1. Ask the user to list their tasks
+2. Ask for criteria to prioritize tasks <interactively depends on 1>
+3. Create prioritized lists based on different criteria: urgency, importance, deadline, and duration <sequentially depends on2>
+4. Report the prioritized lists to the user <interactively depends on 3>
+>>> [PLAN]
+1. Receive the list of tasks and their associated criteria from the user
+2. Create prioritized lists based on the criteria: urgency, importance, deadline, and duration
+3. Report the prioritized lists to the user
+>>> [CURRENT_PLAN_STEP]
+2. Create prioritized lists based on the criteria: urgency, importance, deadline, and duration
+>>> [SEND_TO]
+CodeInterpreter
+>>> [MESSAGE]
+Please create four separate prioritized lists for the following tasks based on urgency, importance, deadline, and duration:
+- clean the bathroom: urgency = low, duration = 30 minutes, importance = low, deadline = tomorrow
+- touch up paint in the bathroom: urgency = low, duration = 60 minutes, importance = low, deadline = not applicable
+- complete my taxes: urgency = low, duration = 120 minutes, importance = high, deadline = 2 weeks away
+- feed the fish: urgency = medium, duration = 10 minutes, importance = high, deadline = tomorrow
+>>> [PLANNER->CODEINTERPRETER]
+Please create four separate prioritized lists for the following tasks based on urgency, importance, deadline, and duration:
+- clean the bathroom: urgency = low, duration = 30 minutes, importance = low, deadline = tomorrow
+- touch up paint in the bathroom: urgency = low, duration = 60 minutes, importance = low, deadline = not applicable
+- complete my taxes: urgency = low, duration = 120 minutes, importance = high, deadline = 2 weeks away
+- feed the fish: urgency = medium, duration = 10 minutes, importance = high, deadline = tomorrow
+>>> [THOUGHT]
+ProgramApe will create a Python code snippet to sort the tasks based on the given criteria: urgency, importance, deadline, and duration. Since the deadline for 'touch up paint in the bathroom' is not applicable, it will be handled differently in the sorting process.
+>>> [PYTHON]
+# Define the tasks and their associated criteria
+tasks = {
+    'clean the bathroom': {'urgency': 'low', 'duration': 30, 'importance': 'low', 'deadline': 'tomorrow'},
+    'touch up paint in the bathroom': {'urgency': 'low', 'duration': 60, 'importance': 'low', 'deadline': None},
+    'complete my taxes': {'urgency': 'low', 'duration': 120, 'importance': 'high', 'deadline': '2 weeks away'},
+    'feed the fish': {'urgency': 'medium', 'duration': 10, 'importance': 'high', 'deadline': 'tomorrow'}
+}
+
+# Define a function to sort tasks based on a given criterion
+def sort_tasks(tasks, criterion, reverse=False):
+    return sorted(tasks, key=lambda task: (tasks[task][criterion] is None, tasks[task][criterion]), reverse=reverse)
+
+# Create prioritized lists
+urgency_list = sort_tasks(tasks, 'urgency', reverse=True)
+importance_list = sort_tasks(tasks, 'importance', reverse=True)
+deadline_list = sort_tasks(tasks, 'deadline')
+duration_list = sort_tasks(tasks, 'duration')
+
+# Put all the result variables in the last line of the code
+(urgency_list, importance_list, deadline_list, duration_list)
+>>> [VERIFICATION]
+NONE
+>>> [STATUS]
+SUCCESS
+>>> [RESULT]
+The execution of the generated python code above has succeeded
+
+The result of above Python code after execution is:
+(['feed the fish', 'clean the bathroom', 'touch up paint in the bathroom', 'complete my taxes'], ['clean the bathroom', 'touch up paint in the bathroom', 'complete my taxes', 'feed the fish'], ['complete my taxes', 'clean the bathroom', 'feed the fish', 'touch up paint in the bathroom'], ['feed the fish', 'clean the bathroom', 'touch up paint in the bathroom', 'complete my taxes'])
+>>> [CODEINTERPRETER->PLANNER]
+The following python code has been executed:
+```python
+# Define the tasks and their associated criteria
+tasks = {
+    'clean the bathroom': {'urgency': 'low', 'duration': 30, 'importance': 'low', 'deadline': 'tomorrow'},
+    'touch up paint in the bathroom': {'urgency': 'low', 'duration': 60, 'importance': 'low', 'deadline': None},
+    'complete my taxes': {'urgency': 'low', 'duration': 120, 'importance': 'high', 'deadline': '2 weeks away'},
+    'feed the fish': {'urgency': 'medium', 'duration': 10, 'importance': 'high', 'deadline': 'tomorrow'}
+}
+
+# Define a function to sort tasks based on a given criterion
+def sort_tasks(tasks, criterion, reverse=False):
+    return sorted(tasks, key=lambda task: (tasks[task][criterion] is None, tasks[task][criterion]), reverse=reverse)
+
+# Create prioritized lists
+urgency_list = sort_tasks(tasks, 'urgency', reverse=True)
+importance_list = sort_tasks(tasks, 'importance', reverse=True)
+deadline_list = sort_tasks(tasks, 'deadline')
+duration_list = sort_tasks(tasks, 'duration')
+
+# Put all the result variables in the last line of the code
+(urgency_list, importance_list, deadline_list, duration_list)
+```
+
+
+The execution of the generated python code above has succeeded
+
+The result of above Python code after execution is:
+(['feed the fish', 'clean the bathroom', 'touch up paint in the bathroom', 'complete my taxes'], ['clean the bathroom', 'touch up paint in the bathroom', 'complete my taxes', 'feed the fish'], ['complete my taxes', 'clean the bathroom', 'feed the fish', 'touch up paint in the bathroom'], ['feed the fish', 'clean the bathroom', 'touch up paint in the bathroom', 'complete my taxes'])
+>>> [INIT_PLAN]
+1. Ask the user to list their tasks
+2. Ask for criteria to prioritize tasks <interactively depends on 1>
+3. Create prioritized lists based on different criteria: urgency, importance, deadline, and duration <sequentially depends on2>
+4. Report the prioritized lists to the user <interactively depends on 3>
+>>> [PLAN]
+1. Receive the list of tasks and their associated criteria from the user
+2. Create prioritized lists based on the criteria: urgency, importance, deadline, and duration
+3. Report the prioritized lists to the user
+>>> [CURRENT_PLAN_STEP]
+3. Report the prioritized lists to the user
+>>> [SEND_TO]
+User
+>>> [MESSAGE]
+Here are your tasks prioritized by different criteria:
+
+By Urgency:
+1. Feed the fish
+2. Clean the bathroom
+3. Touch up paint in the bathroom
+4. Complete my taxes
+
+By Importance:
+1. Clean the bathroom
+2. Touch up paint in the bathroom
+3. Complete my taxes
+4. Feed the fish
+
+By Deadline:
+1. Complete my taxes
+2. Clean the bathroom
+3. Feed the fish
+4. Touch up paint in the bathroom (No deadline)
+
+By Duration:
+1. Feed the fish
+2. Clean the bathroom
+3. Touch up paint in the bathroom
+4. Complete my taxes
+>>> [PLANNER->USER]
+Here are your tasks prioritized by different criteria:
+
+By Urgency:
+1. Feed the fish
+2. Clean the bathroom
+3. Touch up paint in the bathroom
+4. Complete my taxes
+
+By Importance:
+1. Clean the bathroom
+2. Touch up paint in the bathroom
+3. Complete my taxes
+4. Feed the fish
+
+By Deadline:
+1. Complete my taxes
+2. Clean the bathroom
+3. Feed the fish
+4. Touch up paint in the bathroom (No deadline)
+
+By Duration:
+1. Feed the fish
+2. Clean the bathroom
+3. Touch up paint in the bathroom
+4. Complete my taxes
+TaskWeaver: Here are your tasks prioritized by different criteria:
+
+By Urgency:
+1. Feed the fish
+2. Clean the bathroom
+3. Touch up paint in the bathroom
+4. Complete my taxes
+
+By Importance:
+1. Clean the bathroom
+2. Touch up paint in the bathroom
+3. Complete my taxes
+4. Feed the fish
+
+By Deadline:
+1. Complete my taxes
+2. Clean the bathroom
+3. Feed the fish
+4. Touch up paint in the bathroom (No deadline)
+
+By Duration:
+1. Feed the fish
+2. Clean the bathroom
+3. Touch up paint in the bathroom
+4. Complete my taxes
+Human: thank you

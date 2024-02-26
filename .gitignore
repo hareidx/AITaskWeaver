@@ -1,4 +1,12 @@
+project/taskweaver_config.json
+taskweaver_config.json
 auto_eval/evaluator_config.json
+project/taskweaver_config
+project/taskweaver_config.json
+D:/code/GitHub/AITaskWeaver/project/taskweaver_config.json
+D://code//GitHub//AITaskWeaver//project//taskweaver_config.json
+D:\code\GitHub\AITaskWeaver\project\taskweaver_config.json
+*.json
 !sample/*.csv
 !tests/blackbox/*.csv
 workspace/*
@@ -233,4 +241,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
 
